@@ -49,6 +49,14 @@ spring:
       #合并多个DruidDataSource的监控数据
       use-global-data-source-stat: true
 
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: 172.20.10.8:9092
 
 
 #rest请求的超时时间

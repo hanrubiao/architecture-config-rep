@@ -20,11 +20,15 @@ spring:
       max-redirects: 6
       nodes: 172.20.10.8:7000,172.20.10.8:7001,172.20.10.9:7000,172.20.10.9:7001, 172.20.10.10:7000,172.20.10.10:7001
 
-
   cloud:
     loadbalancer:
       retry:
         enabled: true
+    stream:
+      kafka:
+        binder:
+          brokers: 172.20.10.8:9092
+
 
 server:
   port: 5001
@@ -33,8 +37,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://eureka1:8001/eureka,http://eureka2:8002/eureka
-
-
 
 zuul:
   routes:
