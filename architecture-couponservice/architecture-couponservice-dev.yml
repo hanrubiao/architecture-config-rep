@@ -55,6 +55,12 @@ feign:
     request:
       min-request-size: 2048
       mime-types: text/html, application/xml, application/json
+#turbine
+turbine:
+  app-config: architecture-orderservice,architecture-userservic
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
 
 #  #微服务的请求配置
 #  architecture-orderservice.ConnectTimeout=3000
