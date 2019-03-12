@@ -58,6 +58,12 @@ spring:
         binder:
           brokers: localhost:9092
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
+
 
 #rest请求的超时时间
 custome:
