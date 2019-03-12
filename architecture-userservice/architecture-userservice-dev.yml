@@ -20,19 +20,8 @@ spring:
       max-redirects: 6
       nodes: 172.20.10.8:7000,172.20.10.8:7001,172.20.10.9:7000,172.20.10.9:7001, 172.20.10.10:7000,172.20.10.10:7001
 
-    server:
-      port: 7001
-
-    cloud:
-      stream:
-        kafka:
-          binder:
-            brokers: localhost:9092
-      config:
-        server:
-          git:
-            uri: https://github.com/hanrubiao/architecture-config-rep.git
-
+server:
+  port: 7001
 
 eureka:
   client:
