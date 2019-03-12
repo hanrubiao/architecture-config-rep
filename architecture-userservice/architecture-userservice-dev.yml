@@ -19,6 +19,15 @@ spring:
     cluster:
       max-redirects: 6
       nodes: 172.20.10.8:7000,172.20.10.8:7001,172.20.10.9:7000,172.20.10.9:7001, 172.20.10.10:7000,172.20.10.10:7001
+      #zipkin配置
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+    zipkin:
+      base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
 
 server:
   port: 7001

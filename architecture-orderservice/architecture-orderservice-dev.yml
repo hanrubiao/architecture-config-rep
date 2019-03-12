@@ -48,7 +48,6 @@ spring:
       connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
       #合并多个DruidDataSource的监控数据
       use-global-data-source-stat: true
-
   cloud:
     loadbalancer:
       retry:
@@ -57,6 +56,15 @@ spring:
       kafka:
         binder:
           brokers: localhost:9092
+  #zipkin配置
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+    zipkin:
+      base-url: http://localhost:9411/ # 指定了 Zipkin 服务器的地址
 
 management:
   endpoints:
