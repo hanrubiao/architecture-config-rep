@@ -27,7 +27,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: 172.20.10.8:9092
+          brokers: localhost:9092
 
 
 server:
